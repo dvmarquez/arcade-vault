@@ -1,15 +1,21 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useState, type FormEvent } from "react";
 import { useSession } from "@/lib/session";
 
 type Tab = "in" | "up";
 
-export function AuthForm() {
+/** AuthForm con la pestaña inicial tomada de `?modo=registro`. Requiere un `<Suspense>` por encima. */
+export function AuthFormFromQuery() {
+  const modo = useSearchParams().get("modo");
+  return <AuthForm initialTab={modo === "registro" ? "up" : "in"} />;
+}
+
+export function AuthForm({ initialTab = "in" }: { initialTab?: Tab }) {
   const router = useRouter();
   const { login, logout } = useSession();
-  const [tab, setTab] = useState<Tab>("in");
+  const [tab, setTab] = useState<Tab>(initialTab);
 
   // Sesión simulada: no se valida la contraseña ni el correo.
   const submit = (e: FormEvent<HTMLFormElement>) => {
