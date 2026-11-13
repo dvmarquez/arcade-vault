@@ -16,12 +16,12 @@ export function AuthForm() {
     e.preventDefault();
     const user = String(new FormData(e.currentTarget).get("user") ?? "").trim();
     login({ name: (user || "PLAYER1").toUpperCase().slice(0, 10) });
-    router.push("/");
+    router.push("/juegos");
   };
 
   const playAsGuest = () => {
     logout();
-    router.push("/");
+    router.push("/juegos");
   };
 
   return (

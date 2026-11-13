@@ -9,7 +9,7 @@ type Section = "biblioteca" | "salon" | "auth";
 
 /** Sección activa según la URL: Detalle y Reproductor cuentan como Biblioteca. */
 function sectionOf(pathname: string): Section | null {
-  if (pathname === "/" || pathname.startsWith("/juegos/")) return "biblioteca";
+  if (pathname === "/juegos" || pathname.startsWith("/juegos/")) return "biblioteca";
   if (pathname.startsWith("/salon")) return "salon";
   if (pathname.startsWith("/auth")) return "auth";
   return null;
@@ -40,7 +40,7 @@ export function Nav() {
           </div>
         </Link>
         <div className="links">
-          <Link href="/" className={active("biblioteca")}>
+          <Link href="/juegos" className={active("biblioteca")}>
             Biblioteca
           </Link>
           <Link href="/salon" className={active("salon")}>
@@ -83,7 +83,7 @@ export function Nav() {
         <div className="pixel neon-cyan" style={{ fontSize: 11, marginBottom: 16 }}>
           MENÚ
         </div>
-        <Link href="/" className={active("biblioteca")} onClick={close}>
+        <Link href="/juegos" className={active("biblioteca")} onClick={close}>
           Biblioteca
         </Link>
         <Link href="/salon" className={active("salon")} onClick={close}>
