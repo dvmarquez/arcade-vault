@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FeatureIcon, type FeatureIconKind } from "@/components/feature-icon";
 import { FloatingSilhouettes } from "@/components/floating-silhouettes";
 import { MiniCard } from "@/components/mini-card";
+import { Reveal } from "@/components/reveal";
 import { GAMES, getGame, type NeonColor } from "@/lib/games";
 import { RECENT_SCORES, TOP_PLAYERS } from "@/lib/home";
 
@@ -102,7 +103,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="home-section">
+      <Reveal className="home-section">
         <div className="section-head">
           <div className="kicker pixel neon-magenta">{"// 01"}</div>
           <h2 className="section-title">¿POR QUÉ ARCADE VAULT?</h2>
@@ -117,9 +118,9 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </section>
+      </Reveal>
 
-      <section className="home-section">
+      <Reveal className="home-section">
         <div className="section-head">
           <div className="kicker pixel neon-cyan">{"// 02"}</div>
           <h2 className="section-title">JUEGOS DISPONIBLES AHORA</h2>
@@ -135,9 +136,9 @@ export default function Home() {
             VER TODOS LOS JUEGOS →
           </Link>
         </div>
-      </section>
+      </Reveal>
 
-      <section className="home-stats">
+      <Reveal className="home-stats">
         <div className="stats-inner">
           {STATS.map((st, i) => (
             <div key={st.u} className="stat-block" style={{ transitionDelay: i * 90 + "ms" }}>
@@ -147,9 +148,9 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </section>
+      </Reveal>
 
-      <section className="home-section">
+      <Reveal className="home-section">
         <div className="section-head">
           <div className="kicker pixel neon-yellow">{"// 03"}</div>
           <h2 className="section-title">ACTIVIDAD EN VIVO</h2>
@@ -193,9 +194,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </Reveal>
 
-      <section className="home-section">
+      <Reveal className="home-section">
         <div className="section-head">
           <div className="kicker pixel neon-green">{"// 04"}</div>
           <h2 className="section-title">PRECIOS</h2>
@@ -235,15 +236,15 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </Reveal>
 
-      <section className="home-final">
+      <Reveal className="home-final">
         <h2 className="final-title pixel">¿LISTO PARA JUGAR?</h2>
         <Link href="/juegos" className="btn xl pulse final-cta">
           INSERTAR MONEDA →
         </Link>
         <div className="final-tag">Gratis. Sin registro obligatorio. Empieza en segundos.</div>
-      </section>
+      </Reveal>
     </div>
   );
 }
