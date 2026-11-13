@@ -15,4 +15,11 @@ https://github.com/Klerith/fernando-skills
 npx skills@latest add Klerith/fernando-skills
 ```
 
-## Hola Mundo
+## Commands
+
+- `npm run dev`: dev server at http://localhost:3000
+- `npm run build`: production build (also type-checks)
+- `npm run lint`: ESLint 9 flat config (`eslint.config.mjs`, next core-web-vitals + typescript)
+- Type-check only: `npx tsc --noEmit`
+
+No test framework is configured yet.
