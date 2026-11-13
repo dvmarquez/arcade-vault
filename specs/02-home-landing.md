@@ -1,6 +1,6 @@
 # SPEC 02 — Home (landing) de Arcade Vault
 
-> **Estado:** Aprobado
+> **Estado:** Implementado
 > **Depende de:** SPEC 01
 > **Fecha:** 2026-11-13
 > **Objetivo:** Portar la landing de `references/templates/home-about/home.jsx` a la ruta `/` y mover la Biblioteca a `/juegos`, con datos mock estáticos.
@@ -93,26 +93,26 @@ Convenciones:
 
 ## Criterios de aceptación
 
-- [ ] `npm run lint` termina sin errores.
-- [ ] `npm run build` termina sin errores y prerenderiza `/`, `/juegos`, `/auth`, `/salon` y las 8 rutas `/juegos/[id]`.
-- [ ] La consola del navegador no muestra errores ni avisos de hidratación en `/` ni en `/juegos`.
-- [ ] `/` muestra, en orden: hero, `// 01`, `// 02`, estadísticas, `// 03`, `// 04` y CTA final.
-- [ ] `/juegos` muestra la Biblioteca con las 8 tarjetas, búsqueda y chips como en SPEC 01.
-- [ ] `▶ EXPLORAR JUEGOS`, `VER TODOS LOS JUEGOS →` e `INSERTAR MONEDA →` navegan a `/juegos`.
-- [ ] `✦ CREAR CUENTA` y `EMPEZAR GRATIS →` navegan a `/auth?modo=registro`, que muestra la pestaña "CREAR CUENTA" con el campo de correo.
-- [ ] `/auth` sin query muestra la pestaña "INICIAR SESIÓN".
-- [ ] La sección `// 02` muestra exactamente 6 mini-tarjetas y cada una navega a `/juegos/<id>`.
-- [ ] El primer bloque de estadísticas muestra `8 JUEGOS`.
-- [ ] Ningún texto de la Home menciona Arkanoid, Tetris ni Snake.
-- [ ] "ÚLTIMAS PUNTUACIONES" muestra 7 filas y "TOP JUGADORES · HOY" muestra 5; `VER SALÓN →` navega a `/salon`.
-- [ ] Las secciones con `.reveal` pasan a visibles al entrar en pantalla.
-- [ ] Con `prefers-reduced-motion: reduce`, todas las secciones son visibles sin animación.
-- [ ] La nav muestra "Inicio", "Biblioteca" y "Salón de la Fama"; "Inicio" está activo solo en `/` y "Biblioteca" en `/juegos`, `/juegos/<id>` y `/juegos/<id>/jugar`.
-- [ ] El panel móvil incluye "Inicio" y "Biblioteca" con los mismos destinos.
-- [ ] El logo de la nav y el botón del 404 navegan a `/`.
-- [ ] Enviar el formulario de acceso y "JUGAR COMO INVITADO" navegan a `/juegos`.
-- [ ] "VOLVER AL VAULT" (Detalle y Game Over) y el botón de vuelta del Salón navegan a `/juegos`.
-- [ ] A 375 px de ancho, `/` no tiene scroll horizontal.
+- [X] `npm run lint` termina sin errores.
+- [X] `npm run build` termina sin errores y prerenderiza `/`, `/juegos`, `/auth`, `/salon` y las 8 rutas `/juegos/[id]`.
+- [X] La consola del navegador no muestra errores ni avisos de hidratación en `/` ni en `/juegos`.
+- [X] `/` muestra, en orden: hero, `// 01`, `// 02`, estadísticas, `// 03`, `// 04` y CTA final.
+- [X] `/juegos` muestra la Biblioteca con las 8 tarjetas, búsqueda y chips como en SPEC 01.
+- [X] `▶ EXPLORAR JUEGOS`, `VER TODOS LOS JUEGOS →` e `INSERTAR MONEDA →` navegan a `/juegos`.
+- [X] `✦ CREAR CUENTA` y `EMPEZAR GRATIS →` navegan a `/auth?modo=registro`, que muestra la pestaña "CREAR CUENTA" con el campo de correo.
+- [X] `/auth` sin query muestra la pestaña "INICIAR SESIÓN".
+- [X] La sección `// 02` muestra exactamente 6 mini-tarjetas y cada una navega a `/juegos/<id>`.
+- [X] El primer bloque de estadísticas muestra `8 JUEGOS`.
+- [X] Ningún texto de la Home menciona Arkanoid, Tetris ni Snake.
+- [X] "ÚLTIMAS PUNTUACIONES" muestra 7 filas y "TOP JUGADORES · HOY" muestra 5; `VER SALÓN →` navega a `/salon`.
+- [X] Las secciones con `.reveal` pasan a visibles al entrar en pantalla.
+- [X] Con `prefers-reduced-motion: reduce`, todas las secciones son visibles sin animación.
+- [X] La nav muestra "Inicio", "Biblioteca" y "Salón de la Fama"; "Inicio" está activo solo en `/` y "Biblioteca" en `/juegos`, `/juegos/<id>` y `/juegos/<id>/jugar`.
+- [X] El panel móvil incluye "Inicio" y "Biblioteca" con los mismos destinos.
+- [X] El logo de la nav y el botón del 404 navegan a `/`.
+- [X] Enviar el formulario de acceso y "JUGAR COMO INVITADO" navegan a `/juegos`.
+- [X] "VOLVER AL VAULT" (Detalle y Game Over) y el botón de vuelta del Salón navegan a `/juegos`.
+- [X] A 375 px de ancho, `/` no tiene scroll horizontal.
 
 ## Decisiones
 
