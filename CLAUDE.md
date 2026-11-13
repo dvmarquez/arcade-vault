@@ -8,16 +8,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Arcade Vault is an online platform for playing games and competing for the highest score. It is at the create-next-app starting point: `app/page.tsx` and `app/layout.tsx` still hold the template content and metadata.
 
+## Skills
+
 Work follows Spec Driven Design with the `/spec` and `/spec-impl` skills from https://github.com/Klerith/fernando-skills (install: `npx skills@latest add Klerith/fernando-skills`).
 
-## Commands
-
-- `npm run dev`: dev server at http://localhost:3000
-- `npm run build`: production build (also type-checks)
-- `npm run lint`: ESLint 9 flat config (`eslint.config.mjs`, next core-web-vitals + typescript)
-- Type-check only: `npx tsc --noEmit`
-
-No test framework is configured yet.
+Always use /frontend-design to design user interface using HTML.
 
 ## Stack and configuration
 
