@@ -5,13 +5,14 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useSession } from "@/lib/session";
 
-type Section = "inicio" | "biblioteca" | "salon" | "auth";
+type Section = "inicio" | "biblioteca" | "salon" | "acerca" | "auth";
 
 /** Sección activa según la URL: Detalle y Reproductor cuentan como Biblioteca. */
 function sectionOf(pathname: string): Section | null {
   if (pathname === "/") return "inicio";
   if (pathname === "/juegos" || pathname.startsWith("/juegos/")) return "biblioteca";
   if (pathname.startsWith("/salon")) return "salon";
+  if (pathname.startsWith("/acerca")) return "acerca";
   if (pathname.startsWith("/auth")) return "auth";
   return null;
 }
@@ -49,6 +50,9 @@ export function Nav() {
           </Link>
           <Link href="/salon" className={active("salon")}>
             Salón de la Fama
+          </Link>
+          <Link href="/acerca" className={active("acerca")}>
+            Acerca de
           </Link>
         </div>
         <div className="spacer" />
@@ -95,6 +99,9 @@ export function Nav() {
         </Link>
         <Link href="/salon" className={active("salon")} onClick={close}>
           Salón de la Fama
+        </Link>
+        <Link href="/acerca" className={active("acerca")} onClick={close}>
+          Acerca de
         </Link>
         <Link href="/auth" className={active("auth")} onClick={close}>
           {user ? "Cuenta" : "Iniciar Sesión"}
