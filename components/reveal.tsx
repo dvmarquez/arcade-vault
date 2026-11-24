@@ -3,12 +3,23 @@
 import { useEffect, useRef, type ReactNode } from "react";
 
 /**
- * Sección que aparece al entrar en pantalla: añade `in` a `.reveal`.
+ * Bloque que aparece al entrar en pantalla: añade `in` a `.reveal`.
  * Sin IntersectionObserver se muestra de inmediato; con movimiento
- * reducido el CSS la deja visible sin animación.
+ * reducido el CSS lo deja visible sin animación.
  */
-export function Reveal({ className, children }: { className: string; children: ReactNode }) {
-  const ref = useRef<HTMLElement>(null);
+export function Reveal({
+  as: Tag = "section",
+  className,
+  children,
+  "aria-hidden": ariaHidden,
+}: {
+  as?: "section" | "div";
+  className: string;
+  children: ReactNode;
+  "aria-hidden"?: boolean;
+}) {
+  // HTMLDivElement no añade nada usado aquí y su ref también sirve para <section>.
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const el = ref.current;
@@ -31,8 +42,8 @@ export function Reveal({ className, children }: { className: string; children: R
   }, []);
 
   return (
-    <section ref={ref} className={"reveal " + className}>
+    <Tag ref={ref} className={"reveal " + className} aria-hidden={ariaHidden}>
       {children}
-    </section>
+    </Tag>
   );
 }
